@@ -28,6 +28,7 @@ public class Garageiro extends Activity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(Garageiro.this, Locacao.class);
+                it.putExtra("Tempo", (int)slcTempo.getProgress());
                 startActivity(it);
                 finish();
             }
