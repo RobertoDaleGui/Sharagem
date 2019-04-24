@@ -9,46 +9,49 @@
 
     <TextView
         android:id="@+id/lblTempo"
-        android:layout_width="110dp"
+        android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
         android:text="0 h(s)"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/cinza"
         app:layout_constraintBottom_toTopOf="@+id/lblValor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/lblValor"
+        app:layout_constraintStart_toStartOf="@+id/lblValor"
         app:layout_constraintTop_toBottomOf="@+id/slcTempo" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="120dp"
+        android:layout_width="190dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="23dp"
         android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintBottom_toTopOf="@+id/slcTempo"
+        app:layout_constraintBottom_toTopOf="@+id/lblGarageiro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usuario_sharagem" />
 
     <TextView
         android:id="@+id/lblGarageiro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="64dp"
+        android:layout_width="313dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="85dp"
         android:gravity="center"
         android:text="Fulanilson de Thalz"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/colorAccent"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/slcTempo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,15 +60,20 @@
 
     <SeekBar
         android:id="@+id/slcTempo"
-        android:layout_width="172dp"
-        android:layout_height="0dp"
+        android:layout_width="308dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
         android:layout_marginBottom="26dp"
         android:max="13"
         android:min="1"
         app:layout_constraintBottom_toTopOf="@+id/lblTempo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="@+id/lblGarageiro"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/lblGarageiro"
+        app:layout_constraintTop_toBottomOf="@+id/lblGarageiro" />
 
     <Button
         android:id="@+id/btnLocar"
@@ -85,14 +93,16 @@
 
     <TextView
         android:id="@+id/lblValor"
-        android:layout_width="wrap_content"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="33dp"
+        android:gravity="center"
         android:text="R$ 0,00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/cinza"
         app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
-        app:layout_constraintStart_toStartOf="@+id/lblTempo"
+        app:layout_constraintEnd_toEndOf="@+id/btnLocar"
+        app:layout_constraintStart_toEndOf="@+id/btnLocar"
         app:layout_constraintTop_toBottomOf="@+id/lblTempo" />
 
     <Button
