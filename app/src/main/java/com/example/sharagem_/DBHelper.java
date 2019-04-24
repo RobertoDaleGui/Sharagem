@@ -13,18 +13,18 @@ public class DBHelper extends SQLiteOpenHelper {
             "Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, login TEXT, senha TEXT)";
     private final static String POPULA_USUARIO = "INSERT INTO Usuario (nome, login, senha) " +
             "VALUES ('Roberto DAlaessandro Guimarães', 'Roberto', '20968802')," +
-            " ('Marlon Rodrigues', 'Marlon', '20968802')," +
+            " ('Marlon Rodrigues', 'Marlon', '20591491')," +
             " ('Raul Silva Leal', 'Raul', '20987771')," +
             " ('David Patricio','David', '12345678')," +
             " ('Mario Sobrenome', 'Mario', '12345678')";
     private final static String CREATE_GARAGEIRO = "CREATE TABLE " +
             "Garageiro (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cdgDevolucao NUMERIC, latitude NUMERIC, longitude NUMERIC)";
     private final static String POPULA_GARAGEIROS = "INSERT INTO Garageiro (nome, latitude, longitude, cdgDevolucao) " +
-            "VALUES ('Roberto', -23.550524, -46.610202, 8802)," +
-            " ('Marlon', -23.5502693, -46.6105029, 123456)," +
-            " ('Raul', -23.5498697,-46.6116831, 7771)," +
-            " ('David', -23.549490,-46.611756, 123456)," +
-            " ('Mario', -23.549287,-46.612053, 123456)";
+            "VALUES ('Roberto DAlaessandro Guimarães', -23.550524, -46.610202, 8802)," +
+            " ('Marlon Rodrigues', -23.5502693, -46.6105029, 1491)," +
+            " ('Raul Silva Leal', -23.5498697,-46.6116831, 7771)," +
+            " ('David Patricio', -23.549490,-46.611756, 123456)," +
+            " ('Mario Sobrenome', -23.549287,-46.612053, 123456)";
 
     private final static String CREATE_HISTORICO = "CREATE TABLE " +
             "Historico (id INTEGER PRIMARY KEY AUTOINCREMENT, garageiro TEXT, tempo INTEGER, data NUMERIC)";
