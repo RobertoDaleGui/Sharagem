@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#01A9DB</color>
+    <color name="colorAccent">#02B1D8</color>
+    <color name="superbranco">#FFFFFF</color>
+    <color name="cinza">#545454</color>
 </resources>
