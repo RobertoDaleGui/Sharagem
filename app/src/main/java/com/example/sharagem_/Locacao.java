@@ -60,7 +60,7 @@ public class Locacao extends AppCompatActivity {
                     @Override
                     public void onTextChanged(CharSequence s, int start,
                                               int before, int count) {
-                        if (s.length() >= 6) {
+                        if (s.length() >= 4) {
                             if (txtRetomar_.getText().toString().equalsIgnoreCase(cdgGarag)) {
                                 finish();
                             } else {
