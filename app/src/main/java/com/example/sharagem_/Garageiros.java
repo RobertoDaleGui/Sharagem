@@ -44,21 +44,22 @@ public class Garageiros extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         GarageiroDAO garageiros = new GarageiroDAO(getApplicationContext());
-       for (GarageiroObj g: garageiros.listaGarageiros()){
-           mMap.addMarker(new MarkerOptions().position(new LatLng(g.getLat(), g.getLon())).title(g.getNome()));
-           mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(g.getLat(), g.getLon())));
-           mMap.animateCamera( CameraUpdateFactory.zoomTo( 17.0f ) );
-       }
+        for (GarageiroObj g : garageiros.listaGarageiros()) {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(g.getLat(), g.getLon())).title(g.getNome()).snippet(g.getCdgDev() + "")).hideInfoWindow();
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(g.getLat(), g.getLon())));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
+        }
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 Intent it = new Intent(Garageiros.this, Garageiro.class);
                 //if (!marker.getPosition().toString().equals(grg1.toString())) {
-                    it.putExtra("Garageiro", marker.getTitle());
-                    Log.d("Garageiro", marker.getTitle());
-                    startActivity(it);
+                it.putExtra("Garageiro", marker.getTitle());
+                it.putExtra("cdgGarageiro", marker.getSnippet());
+                Log.d("Garageiro", marker.getTitle());
+                startActivity(it);
                 //}
-                return false;
+                return true;
             }
         });
     }

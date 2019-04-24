@@ -17,6 +17,7 @@ public class Garageiro extends Activity {
         setTitle("Garagem do Fulano");
         Intent it = getIntent();
         String garageiro = it.getStringExtra("Garageiro");
+        final String s = it.getStringExtra("cdgGarageiro");
         final Button locar = (Button) findViewById(R.id.btnLocar);
         final Button cancelar = (Button) findViewById(R.id.btnCancelar);
         final TextView lblGarageiro = (TextView) findViewById(R.id.lblGarageiro);
@@ -29,6 +30,7 @@ public class Garageiro extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent(Garageiro.this, Locacao.class);
                 it.putExtra("Tempo", (int)slcTempo.getProgress());
+                it.putExtra("cdgGarageiro", s);
                 startActivity(it);
                 finish();
             }
@@ -51,7 +53,8 @@ public class Garageiro extends Activity {
 
             }
         });
-        lblValor.setText(slcTempo.getProgress() + "");
+        lblValor.setText("R$" + slcTempo.getProgress() * 1.22);
+        lblTempo.setText(slcTempo.getProgress() + " h(s)");
 
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override

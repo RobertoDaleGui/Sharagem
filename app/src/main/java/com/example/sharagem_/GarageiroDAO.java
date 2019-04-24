@@ -21,9 +21,9 @@ public class GarageiroDAO {
 
     public void inserir(GarageiroObj garageiro) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        //db.execSQL("INSERT INTO pessoa(nome) VALUES(" + pessoa.getNome() + ")");
         ContentValues cv = new ContentValues();
         cv.put("nome", garageiro.getNome());
+        cv.put("cdgDevolucao", garageiro.getCdgDev());
         cv.put("latitude", garageiro.getLat());
         cv.put("longitude", garageiro.getLon());
         db.insert("Garageiro", null, cv);
@@ -37,11 +37,11 @@ public class GarageiroDAO {
             Log.d("Tabeloide: ","Vazia!!!");
         } else {
             // Tabela ja contem dados.
-            Log.d("Tabeloide: ","Chaeia!!!");
+            Log.d("Tabeloide: ","Cheia!!!");
         }
         Cursor cursor = db.query(
                 "Garageiro",
-                new String[]{"nome", "latitude", "longitude"},
+                new String[]{"nome", "cdgDevolucao", "latitude", "longitude"},
                 null,
                 null,
                 null,
@@ -50,7 +50,7 @@ public class GarageiroDAO {
         );
         ArrayList<GarageiroObj> garageiros = new ArrayList<GarageiroObj>();
         while (cursor.moveToNext()) {
-            GarageiroObj g = new GarageiroObj(cursor.getString(0), cursor.getDouble(1), cursor.getDouble(2));
+            GarageiroObj g = new GarageiroObj(cursor.getString(0), cursor.getInt(1), cursor.getDouble(2), cursor.getDouble(3));
             garageiros.add(g);
         }
         return garageiros;

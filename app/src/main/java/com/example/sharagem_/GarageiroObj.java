@@ -4,11 +4,13 @@ public class GarageiroObj {
     private String nome;
     private double lat;
     private double lon;
+    private int cdgDev;
 
-    public GarageiroObj(String nome, double lat, double lon) {
+    public GarageiroObj(String nome, int cdgDev, double lat, double lon) {
         this.nome = nome;
         this.lat = lat;
         this.lon = lon;
+        this.cdgDev = cdgDev;
     }
 
     public String getNome() {
@@ -17,6 +19,14 @@ public class GarageiroObj {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getCdgDev() {
+        return cdgDev;
+    }
+
+    public void setCdgDev(int cdgDev) {
+        this.cdgDev = cdgDev;
     }
 
     public double getLat() {
@@ -41,6 +51,7 @@ public class GarageiroObj {
                 "nome='" + nome + '\'' +
                 ", lat=" + lat +
                 ", lon=" + lon +
+                ", cdgDev=" + cdgDev +
                 '}';
     }
 }

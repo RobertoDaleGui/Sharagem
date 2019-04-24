@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
     private final static String DATABASE_NAME = "sharagem.db";
-    private final static int DATABASE_VERSION = 2;
+    private final static int DATABASE_VERSION = 5;
     private final static String CREATE_USUARIO = "CREATE TABLE " +
             "Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, senha TEXT)";
     private final static String POPULA_USUARIO = "INSERT INTO Usuario (login, senha) " +
@@ -18,13 +18,13 @@ public class DBHelper extends SQLiteOpenHelper {
             " ('David', '12345678')," +
             " ('Mario', '12345678')";
     private final static String CREATE_GARAGEIRO = "CREATE TABLE " +
-            "Garageiro (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, latitude NUMERIC, longitude NUMERIC)";
-    private final static String POPULA_GARAGEIROS = "INSERT INTO Garageiro (nome, latitude, longitude) " +
-            "VALUES ('Roberto', -23.550524, -46.610202)," +
-            " ('Marlon', -23.5502693, -46.6105029)," +
-            " ('Raul', -23.5498697,-46.6116831)," +
-            " ('David', -23.549490,-46.611756)," +
-            " ('Mario', -23.549287,-46.612053)";
+            "Garageiro (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cdgDevolucao NUMERIC, latitude NUMERIC, longitude NUMERIC)";
+    private final static String POPULA_GARAGEIROS = "INSERT INTO Garageiro (nome, latitude, longitude, cdgDevolucao) " +
+            "VALUES ('Roberto', -23.550524, -46.610202, 123456)," +
+            " ('Marlon', -23.5502693, -46.6105029, 123456)," +
+            " ('Raul', -23.5498697,-46.6116831, 123456)," +
+            " ('David', -23.549490,-46.611756, 123456)," +
+            " ('Mario', -23.549287,-46.612053, 123456)";
 
     private final static String CREATE_HISTORICO = "CREATE TABLE " +
             "Historico (id INTEGER PRIMARY KEY AUTOINCREMENT, garageiro TEXT, tempo INTEGER, data NUMERIC)";
@@ -35,6 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        //context.deleteDatabase(DATABASE_NAME);
     }
 
     @Override
