@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
             "VALUES ('Roberto DAlaessandro Guimarães', 'Roberto', '20968802')," +
             " ('Marlon Rodrigues', 'Marlon', '20591491')," +
             " ('Raul Silva Leal', 'Raul', '20987771')," +
-            " ('David Patricio','David', '12345678')," +
+            " ('David Patricio','David', '20918407')," +
             " ('Mario Sobrenome', 'Mario', '12345678')";
     private final static String CREATE_GARAGEIRO = "CREATE TABLE " +
             "Garageiro (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cdgDevolucao NUMERIC, latitude NUMERIC, longitude NUMERIC)";
@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
             "VALUES ('Roberto DAlaessandro Guimarães', -23.550524, -46.610202, 8802)," +
             " ('Marlon Rodrigues', -23.5502693, -46.6105029, 1491)," +
             " ('Raul Silva Leal', -23.5498697,-46.6116831, 7771)," +
-            " ('David Patricio', -23.549490,-46.611756, 123456)," +
+            " ('David Patricio', -23.549490,-46.611756, 8407)," +
             " ('Mario Sobrenome', -23.549287,-46.612053, 123456)";
 
     private final static String CREATE_HISTORICO = "CREATE TABLE " +
