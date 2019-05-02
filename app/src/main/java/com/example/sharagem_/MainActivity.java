@@ -31,15 +31,19 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean cond = false;
                 for (Usuario u : usuarios.listaUsuarios()) {
                     if (txtLogin.getText().toString().equalsIgnoreCase(u.getLogin()) && txtSenha.getText().toString().equalsIgnoreCase(u.getSenha())) {
-                        Intent intent = new Intent(getApplicationContext(), Garageiros.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        txtLogin.setBackgroundColor(Color.parseColor("#ffb3b3"));
-                        txtSenha.setBackgroundColor(Color.parseColor("#ffb3b3"));
+                        cond = true;
                     }
+                }
+                if (cond) {
+                    Intent intent = new Intent(getApplicationContext(), Garageiros.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    txtLogin.setBackgroundColor(Color.parseColor("#ffb3b3"));
+                    txtSenha.setBackgroundColor(Color.parseColor("#ffb3b3"));
                 }
             }
         });
