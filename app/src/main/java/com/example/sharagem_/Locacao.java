@@ -33,14 +33,14 @@ public class Locacao extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 prbStatus_.setProgress((int) millisUntilFinished);
                 if ((millisUntilFinished / 10000) < 1) {
-                    lblTempo_.setText("Tens menos de uma hora para retomastes teu veículo.");
+                    lblTempo_.setText("Tens menos de uma hora para retomar  o seu veículo.");
                 } else {
                     lblTempo_.setText("Tens " + (millisUntilFinished / 10000) + " horas para retomar o seu veículo.");
                 }
             }
 
             public void onFinish() {
-                lblTempo_.setText("Insira o código do garageiro para retomaste o teu veículo.");
+                lblTempo_.setText("Insira o código do garageiro para retomar o seu veículo.");
                 txtRetomar_.setVisibility(View.VISIBLE);
             }
 

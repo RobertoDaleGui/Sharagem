@@ -1,15 +1,21 @@
 package com.example.sharagem_;
 
 public class Usuario {
+    private int id;
     private String nome;
     private String login;
     private String senha;
 
-    public Usuario(String nome, String login, String senha) {
+    public Usuario(int id, String nome, String login, String senha) {
+        this.id = id;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
     }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getNome() {
         return nome;
@@ -38,6 +44,7 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
+                "id='" + id + '\'' +
                 "nome='" + nome + '\'' +
                 ", login='" + login + '\'' +
                 ", senha='" + senha + '\'' +

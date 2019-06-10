@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sharagem</string>
     <string name="title_activity_garageiros">Map</string>
+    <string name="title_activity_cadastro">Novo Garageiro</string>
 </resources>

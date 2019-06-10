@@ -32,7 +32,7 @@ public class UsuarioDAO {
 
         Cursor cursor = db.query(
                 "Usuario",
-                new String[]{"nome", "login", "senha"},
+                new String[]{"id", "nome", "login", "senha"},
                 null,
                 null,
                 null,
@@ -41,7 +41,7 @@ public class UsuarioDAO {
         );
         ArrayList<Usuario> arrUsuarios = new ArrayList<Usuario>();
         while (cursor.moveToNext()) {
-            Usuario u = new Usuario(cursor.getString(0), cursor.getString(1), cursor.getString(2));
+            Usuario u = new Usuario(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
             arrUsuarios.add(u);
         }
         return arrUsuarios;
